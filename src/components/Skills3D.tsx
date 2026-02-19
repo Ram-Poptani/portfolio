@@ -332,7 +332,16 @@ export default function Skills3D() {
               camera={{ position: [0, 0, 12], fov: 50 }}
               style={{ background: "transparent" }}
             >
-              <Suspense fallback={null}>
+              <Suspense
+                fallback={
+                  <Html center>
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="w-12 h-12 border-4 border-accent/30 border-t-accent rounded-full animate-spin" />
+                      <span className="text-xs text-muted font-medium">Loading 3D skills...</span>
+                    </div>
+                  </Html>
+                }
+              >
                 <Scene />
               </Suspense>
             </Canvas>
