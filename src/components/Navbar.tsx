@@ -13,8 +13,14 @@ export default function Navbar() {
   const [darkMode, setDarkMode] = useState(true);
   const [activeSection, setActiveSection] = useState("");
 
+  // Sync state with what the inline script already applied
   useEffect(() => {
-    document.documentElement.classList.add("dark");
+    const saved = localStorage.getItem("theme");
+    if (saved === "light") {
+      setDarkMode(false);
+    } else {
+      setDarkMode(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -47,8 +53,10 @@ export default function Navbar() {
   }, []);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
+    const next = !darkMode;
+    setDarkMode(next);
+    document.documentElement.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
   };
 
   return (
