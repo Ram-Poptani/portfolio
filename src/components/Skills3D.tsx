@@ -5,6 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Html } from "@react-three/drei";
 import * as THREE from "three";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 // Skill data with icon paths and proficiency
 const skillItems = [
@@ -98,7 +99,7 @@ function SkillNode({
                 : "0 2px 8px rgba(0,0,0,0.15)",
             }}
           >
-            <img
+            <Image
               src={skill.icon}
               alt={skill.name}
               width={40}
@@ -187,7 +188,7 @@ function ProficiencyBar({
           border: `1px solid ${color}30`,
         }}
       >
-        <img
+        <Image
           src={skill.icon}
           alt={skill.name}
           width={18}
