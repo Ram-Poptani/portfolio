@@ -17,7 +17,7 @@ import {
   SiApachemaven,
 } from "react-icons/si";
 import { FiDatabase, FiCloud, FiSettings, FiCoffee } from "react-icons/fi";
-import { skills } from "@/lib/data";
+import { skillItems } from "@/lib/data";
 
 const iconMap: Record<string, React.ReactNode> = {
   "Java 17": <FiCoffee />,

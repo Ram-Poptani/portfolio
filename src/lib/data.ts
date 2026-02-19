@@ -10,29 +10,30 @@ export const personalInfo = {
     "Full Stack Java Developer with 2.5+ years of experience building scalable microservices and REST APIs using Java and Spring Boot at Ernst & Young (EY). Proficient in designing event-driven microservices with Apache Kafka, optimizing database performance with Hibernate and Redis, and delivering end-to-end features with React.js. Deployed and maintained containerized applications on Azure with CI/CD pipelines.",
 };
 
-export const skills = {
-  "Languages & Frameworks": [
-    "Java 17",
-    "Spring Boot",
-    "PHP",
-    "Laravel",
-    "JavaScript",
-    "TypeScript",
-    "Express.js",
-    "NestJS",
-    "React.js",
-  ],
-  Databases: ["PostgreSQL", "MySQL", "MongoDB", "MSSQL", "Redis"],
-  Tools: [
-    "Apache Kafka",
-    "Docker",
-    "Microsoft Azure",
-    "Azure DevOps",
-    "CI/CD",
-    "Git",
-    "Maven",
-  ],
-};
+export const skillItems = [
+  { name: "Java 17", icon: "/icons/java.svg", category: "lang", proficiency: 92 },
+  { name: "Spring Boot", icon: "/icons/spring-boot.svg", category: "lang", proficiency: 90 },
+  { name: "PHP", icon: "/icons/php.svg", category: "lang", proficiency: 80 },
+  { name: "Laravel", icon: "/icons/laravel.svg", category: "lang", proficiency: 78 },
+  { name: "JavaScript", icon: "/icons/javascript.svg", category: "lang", proficiency: 90 },
+  { name: "TypeScript", icon: "/icons/typescript.svg", category: "lang", proficiency: 90 },
+  { name: "Express.js", icon: "/icons/express.svg", category: "lang", proficiency: 90 },
+  { name: "NestJS", icon: "/icons/nestjs.svg", category: "lang", proficiency: 90 },
+  { name: "React.js", icon: "/icons/react.svg", category: "lang", proficiency: 78 },
+  { name: "PostgreSQL", icon: "/icons/postgresql.svg", category: "db", proficiency: 85 },
+  { name: "MySQL", icon: "/icons/mysql.svg", category: "db", proficiency: 80 },
+  { name: "MongoDB", icon: "/icons/mongodb.svg", category: "db", proficiency: 70 },
+  { name: "MSSQL", icon: "/icons/mssql.svg", category: "db", proficiency: 65 },
+  { name: "Redis", icon: "/icons/redis.svg", category: "db", proficiency: 75 },
+  { name: "Apache Kafka", icon: "/icons/kafka.svg", category: "tool", proficiency: 80 },
+  { name: "RabbitMQ", icon: "/icons/rabbitmq.svg", category: "tool", proficiency: 80 },
+  { name: "Docker", icon: "/icons/docker.svg", category: "tool", proficiency: 82 },
+  { name: "Microsoft Azure", icon: "/icons/azure.svg", category: "tool", proficiency: 78 },
+  { name: "Azure DevOps", icon: "/icons/azure-devops.svg", category: "tool", proficiency: 75 },
+  { name: "CI/CD", icon: "/icons/cicd.svg", category: "tool", proficiency: 80 },
+  { name: "Git", icon: "/icons/git.svg", category: "tool", proficiency: 90 },
+  { name: "Maven", icon: "/icons/maven.svg", category: "tool", proficiency: 85 },
+];
 
 export const experience = [
   {
