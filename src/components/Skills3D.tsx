@@ -16,7 +16,7 @@ const skillItems = [
   { name: "JavaScript", icon: "/icons/javascript.svg", category: "lang", proficiency: 90 },
   { name: "TypeScript", icon: "/icons/typescript.svg", category: "lang", proficiency: 90 },
   { name: "Express.js", icon: "/icons/express.svg", category: "lang", proficiency: 90 },
-  { name: "NestJS", icon: "/icons/nestjs.svg", category: "lang", proficiency: 75 },
+  { name: "NestJS", icon: "/icons/nestjs.svg", category: "lang", proficiency: 90 },
   { name: "React.js", icon: "/icons/react.svg", category: "lang", proficiency: 78 },
   { name: "PostgreSQL", icon: "/icons/postgresql.svg", category: "db", proficiency: 85 },
   { name: "MySQL", icon: "/icons/mysql.svg", category: "db", proficiency: 80 },
