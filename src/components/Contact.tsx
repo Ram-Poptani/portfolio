@@ -8,6 +8,8 @@ import {
   FiMapPin,
   FiSend,
   FiArrowUpRight,
+  FiCheck,
+  FiAlertCircle,
 } from "react-icons/fi";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { personalInfo } from "@/lib/data";
@@ -20,11 +22,35 @@ export default function Contact() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoLink = `mailto:${personalInfo.email}?subject=Portfolio Contact from ${formData.name}&body=${encodeURIComponent(formData.message)}%0A%0AFrom: ${formData.email}`;
-    window.open(mailtoLink);
+    setStatus("loading");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   const contactLinks = [
@@ -186,11 +212,48 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dark text-white font-medium rounded-xl transition-all hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5"
+                disabled={status === "loading" || status === "success"}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dark text-white font-medium rounded-xl transition-all hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none"
               >
-                <FiSend size={16} />
-                Send Message
+                {status === "loading" ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Sending...
+                  </>
+                ) : status === "success" ? (
+                  <>
+                    <FiCheck size={16} />
+                    Message Sent!
+                  </>
+                ) : (
+                  <>
+                    <FiSend size={16} />
+                    Send Message
+                  </>
+                )}
               </button>
+
+              {status === "success" && (
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-sm text-emerald-500 font-medium mt-3 flex items-center gap-1.5"
+                >
+                  <FiCheck size={14} />
+                  Thanks! I&apos;ll get back to you soon.
+                </motion.p>
+              )}
+
+              {status === "error" && (
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-sm text-red-500 font-medium mt-3 flex items-center gap-1.5"
+                >
+                  <FiAlertCircle size={14} />
+                  {errorMsg}
+                </motion.p>
+              )}
             </form>
           </motion.div>
         </div>
