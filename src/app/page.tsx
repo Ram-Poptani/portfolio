@@ -16,7 +16,7 @@ export default function Home() {
       <CursorGlow />
       <ScrollToTop />
       <Navbar />
-      <main>
+      <main id="main">
         <Hero />
         <About />
         <Skills3DLoader />
