@@ -29,9 +29,9 @@ const skillItems = [
 ];
 
 const categoryColors: Record<string, string> = {
-  lang: "#f59e0b",
-  db: "#10b981",
-  tool: "#ef4444",
+  lang: "#d4d4d8",
+  db: "#a1a1aa",
+  tool: "#71717a",
 };
 
 const categoryLabels: Record<string, string> = {
@@ -41,9 +41,9 @@ const categoryLabels: Record<string, string> = {
 };
 
 const barColors: Record<string, string> = {
-  lang: "from-amber-500 to-orange-400",
-  db: "from-emerald-500 to-teal-400",
-  tool: "from-red-500 to-orange-500",
+  lang: "from-zinc-300 to-zinc-500",
+  db: "from-zinc-400 to-zinc-600",
+  tool: "from-zinc-500 to-zinc-700",
 };
 
 // Fibonacci sphere distribution for even spacing
