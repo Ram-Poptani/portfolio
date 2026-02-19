@@ -1,17 +1,34 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import { FiMapPin, FiBriefcase, FiCode } from "react-icons/fi";
+
+function CountUp({ target, decimals = 0, suffix = "", isInView }: { target: number; decimals?: number; suffix?: string; isInView: boolean }) {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (v) => v.toFixed(decimals) + suffix);
+  const [display, setDisplay] = useState("0" + suffix);
+
+  useEffect(() => {
+    if (!isInView) return;
+    const controls = animate(count, target, {
+      duration: 2,
+      ease: "easeOut",
+    });
+    const unsubscribe = rounded.on("change", (v) => setDisplay(v));
+    return () => { controls.stop(); unsubscribe(); };
+  }, [isInView, target, count, rounded]);
+
+  return <>{display}</>;
+}
 
 export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const stats = [
-    { icon: <FiBriefcase />, label: "Years Experience", value: "2.5+" },
-    { icon: <FiCode />, label: "Tech Stack", value: "15+" },
+    { icon: <FiBriefcase />, label: "Years Experience", target: 2.5, decimals: 1, suffix: "+" },
+    { icon: <FiCode />, label: "Tech Stack", target: 15, decimals: 0, suffix: "+" },
     { icon: <FiMapPin />, label: "Based in", value: "Mumbai" },
   ];
 
@@ -45,7 +62,11 @@ export default function About() {
                 {stat.icon}
               </div>
               <div className="text-2xl font-bold text-foreground mb-1">
-                {stat.value}
+                {stat.target !== undefined ? (
+                  <CountUp target={stat.target} decimals={stat.decimals} suffix={stat.suffix} isInView={isInView} />
+                ) : (
+                  stat.value
+                )}
               </div>
               <div className="text-sm text-muted">{stat.label}</div>
             </motion.div>
