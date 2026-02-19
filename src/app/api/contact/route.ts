@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
       subject: `Portfolio Contact from ${name}`,
       html: `
         <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #71717a; border-bottom: 2px solid #a1a1aa; padding-bottom: 8px;">
+          <h2 style="color: #d97706; border-bottom: 2px solid #f59e0b; padding-bottom: 8px;">
             New Message from Portfolio
           </h2>
           <p><strong>Name:</strong> ${name}</p>

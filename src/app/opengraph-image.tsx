@@ -16,7 +16,7 @@ export default async function OGImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #09090b 0%, #18181b 50%, #09090b 100%)",
+          background: "linear-gradient(135deg, #110f0b 0%, #1c1814 50%, #110f0b 100%)",
           fontFamily: "system-ui, sans-serif",
           position: "relative",
           overflow: "hidden",
@@ -31,7 +31,7 @@ export default async function OGImage() {
             width: 500,
             height: 500,
             borderRadius: "50%",
-            background: "rgba(161, 161, 170, 0.08)",
+            background: "rgba(245, 158, 11, 0.08)",
             filter: "blur(80px)",
           }}
         />
@@ -43,7 +43,7 @@ export default async function OGImage() {
             width: 400,
             height: 400,
             borderRadius: "50%",
-            background: "rgba(113, 113, 122, 0.06)",
+            background: "rgba(239, 68, 68, 0.06)",
             filter: "blur(80px)",
           }}
         />
@@ -56,7 +56,7 @@ export default async function OGImage() {
             left: 0,
             right: 0,
             height: 4,
-            background: "linear-gradient(90deg, #52525b, #a1a1aa, #d4d4d8, #a1a1aa, #52525b)",
+            background: "linear-gradient(90deg, #d97706, #f59e0b, #ef4444, #f59e0b, #d97706)",
           }}
         />
 
@@ -79,11 +79,11 @@ export default async function OGImage() {
               width: 80,
               height: 80,
               borderRadius: 20,
-              border: "2px solid rgba(161, 161, 170, 0.3)",
-              background: "rgba(161, 161, 170, 0.1)",
+              border: "2px solid rgba(245, 158, 11, 0.3)",
+              background: "rgba(245, 158, 11, 0.1)",
               fontSize: 36,
               fontWeight: 800,
-              color: "#d4d4d8",
+              color: "#f59e0b",
               marginBottom: 8,
             }}
           >
@@ -96,7 +96,7 @@ export default async function OGImage() {
               fontSize: 64,
               fontWeight: 800,
               letterSpacing: -2,
-              color: "#e4e4e7",
+              color: "#f5e6d3",
               lineHeight: 1,
             }}
           >
@@ -108,7 +108,7 @@ export default async function OGImage() {
             style={{
               fontSize: 28,
               fontWeight: 600,
-              color: "#a1a1aa",
+              color: "#f59e0b",
               lineHeight: 1,
               marginTop: 4,
             }}
@@ -145,9 +145,9 @@ export default async function OGImage() {
                   style={{
                     padding: "8px 20px",
                     borderRadius: 12,
-                    background: "rgba(161, 161, 170, 0.08)",
-                    border: "1px solid rgba(161, 161, 170, 0.2)",
-                    color: "#d4d4d8",
+                    background: "rgba(245, 158, 11, 0.08)",
+                    border: "1px solid rgba(245, 158, 11, 0.2)",
+                    color: "#fbbf24",
                     fontSize: 15,
                     fontWeight: 600,
                   }}

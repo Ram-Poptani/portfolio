@@ -19,7 +19,7 @@ export default function CursorGlow() {
   const animFrameRef = useRef<number>(0);
   const [isTouch, setIsTouch] = useState(false);
 
-  const colors = ["#a1a1aa", "#d4d4d8", "#71717a", "#e4e4e7", "#ffffff"];
+  const colors = ["#f59e0b", "#fbbf24", "#d97706", "#ef4444", "#f97316"];
 
   const createParticle = useCallback(
     (x: number, y: number): Particle => ({
