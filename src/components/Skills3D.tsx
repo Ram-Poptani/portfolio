@@ -83,7 +83,7 @@ function SkillNode({
               alt={skill.name}
               width={40}
               height={40}
-              className="w-10 h-10"
+              className="w-10 h-10 drop-shadow-[0_0_6px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_0_6px_rgba(255,255,255,0.5)]"
             />
           </div>
           <span
@@ -172,7 +172,7 @@ function ProficiencyBar({
           alt={skill.name}
           width={18}
           height={18}
-          className="w-[18px] h-[18px]"
+          className="w-[18px] h-[18px] drop-shadow-[0_0_4px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]"
         />
       </div>
       <div className="flex-1 min-w-0">
