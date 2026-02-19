@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const siteUrl = "https://rampoptani.dev";
+const title = "Ram Poptani | Software Developer";
+const description =
+  "Full Stack Java Developer with 2.5+ years of experience building scalable microservices and REST APIs using Java and Spring Boot.";
+
 export const metadata: Metadata = {
-  title: "Ram Poptani | Software Developer",
-  description:
-    "Full Stack Java Developer with 2.5+ years of experience building scalable microservices and REST APIs using Java and Spring Boot.",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
   keywords: [
     "Java Developer",
     "Spring Boot",
@@ -13,6 +18,41 @@ export const metadata: Metadata = {
     "Portfolio",
     "Ram Poptani",
   ],
+  authors: [{ name: "Ram Poptani" }],
+  creator: "Ram Poptani",
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: siteUrl,
+    title,
+    description,
+    siteName: title,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Ram Poptani — Full Stack Java Developer Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
