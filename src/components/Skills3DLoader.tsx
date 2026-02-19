@@ -1,6 +1,44 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { Component, type ReactNode } from "react";
+
+class Skills3DErrorBoundary extends Component<
+  { children: ReactNode },
+  { hasError: boolean }
+> {
+  constructor(props: { children: ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <section className="section-padding">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3">
+              Tech <span className="gradient-text">Skills</span>
+            </h2>
+            <p className="text-muted max-w-xl mx-auto mb-8">
+              Technologies and tools I work with
+            </p>
+            <div className="bg-card border border-card-border rounded-2xl p-8">
+              <p className="text-muted text-sm">
+                3D visualization couldn&apos;t load. Please try a different browser or device.
+              </p>
+            </div>
+          </div>
+        </section>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 const Skills3D = dynamic(() => import("@/components/Skills3D"), {
   ssr: false,
@@ -30,5 +68,9 @@ const Skills3D = dynamic(() => import("@/components/Skills3D"), {
 });
 
 export default function Skills3DLoader() {
-  return <Skills3D />;
+  return (
+    <Skills3DErrorBoundary>
+      <Skills3D />
+    </Skills3DErrorBoundary>
+  );
 }
