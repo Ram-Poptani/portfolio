@@ -27,9 +27,18 @@ export async function POST(req: NextRequest) {
     const safeEmail = escapeHtml(email);
     const safeMessage = escapeHtml(message);
 
+    const toEmail = process.env.CONTACT_EMAIL;
+    if (!toEmail) {
+      console.error("CONTACT_EMAIL env variable is not set");
+      return NextResponse.json(
+        { error: "Server configuration error." },
+        { status: 500 }
+      );
+    }
+
     const { error } = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
-      to: "ram.poptani.work@gmail.com",
+      from: "onboarding@resend.dev",
+      to: toEmail,
       replyTo: email,
       subject: `Portfolio Contact from ${safeName}`,
       html: `
