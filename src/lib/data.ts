@@ -10,6 +10,15 @@ export const personalInfo = {
     "Full Stack Java Developer with 2.5+ years of experience building scalable microservices and REST APIs using Java and Spring Boot at Ernst & Young (EY). Proficient in designing event-driven microservices with Apache Kafka, optimizing database performance with Hibernate and Redis, and delivering end-to-end features with React.js. Deployed and maintained containerized applications on Azure with CI/CD pipelines.",
 };
 
+export const roles = [
+  "Full Stack Java Developer",
+  "Backend Engineer",
+  "Node.js Developer",
+  "Problem Solver",
+  "API Builder",
+  "React Developer",
+];
+
 export const skillItems = [
   { name: "Java 17", icon: "/icons/java.svg", category: "lang", proficiency: 92 },
   { name: "Spring Boot", icon: "/icons/spring-boot.svg", category: "lang", proficiency: 90 },

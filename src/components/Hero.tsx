@@ -3,15 +3,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowDown, FiMail, FiDownload } from "react-icons/fi";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { personalInfo } from "@/lib/data";
+import { personalInfo, roles } from "@/lib/data";
 import { useState, useEffect, useCallback } from "react";
-
-const roles = [
-  "Full Stack Java Developer",
-  "Backend Engineer",
-  "Microservices Architect",
-  "Spring Boot Specialist",
-];
 
 function useTypingEffect(texts: string[], typingSpeed = 80, deletingSpeed = 50, pauseDuration = 2000) {
   const [displayText, setDisplayText] = useState("");
