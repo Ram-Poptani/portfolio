@@ -112,7 +112,3 @@ npm start
 - **Email:** [ram.poptani.work@gmail.com](mailto:ram.poptani.work@gmail.com)
 - **LinkedIn:** [linkedin.com/in/ram-poptani-302](https://www.linkedin.com/in/ram-poptani-302/)
 - **GitHub:** [github.com/Ram-Poptani](https://github.com/Ram-Poptani)
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
