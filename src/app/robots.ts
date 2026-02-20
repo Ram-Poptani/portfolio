@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://rampoptani.dev/sitemap.xml",
+    sitemap: "https://ram-poptani.vercel.app/sitemap.xml",
   };
 }

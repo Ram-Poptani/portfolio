@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://rampoptani.dev",
+      url: "https://ram-poptani.vercel.app",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,

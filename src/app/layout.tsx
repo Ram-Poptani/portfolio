@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = "https://rampoptani.dev";
+const siteUrl = "https://ram-poptani.vercel.app";
 const title = "Ram Poptani | Software Developer";
 const description =
   "Full Stack Java Developer with 2.5+ years of experience building scalable microservices and REST APIs using Java and Spring Boot.";
@@ -27,20 +27,11 @@ export const metadata: Metadata = {
     title,
     description,
     siteName: title,
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Ram Poptani — Full Stack Java Developer Portfolio",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,
