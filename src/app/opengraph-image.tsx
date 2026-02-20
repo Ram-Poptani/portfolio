@@ -26,25 +26,23 @@ export default async function OGImage() {
         <div
           style={{
             position: "absolute",
-            top: -100,
-            left: -100,
-            width: 500,
-            height: 500,
+            top: -150,
+            left: -150,
+            width: 600,
+            height: 600,
             borderRadius: "50%",
-            background: "rgba(245, 158, 11, 0.08)",
-            filter: "blur(80px)",
+            background: "radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%)",
           }}
         />
         <div
           style={{
             position: "absolute",
-            bottom: -100,
-            right: -100,
-            width: 400,
-            height: 400,
+            bottom: -150,
+            right: -150,
+            width: 500,
+            height: 500,
             borderRadius: "50%",
-            background: "rgba(239, 68, 68, 0.06)",
-            filter: "blur(80px)",
+            background: "radial-gradient(circle, rgba(239, 68, 68, 0.08) 0%, transparent 70%)",
           }}
         />
 

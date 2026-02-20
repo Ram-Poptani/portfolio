@@ -27,11 +27,21 @@ export const metadata: Metadata = {
     title,
     description,
     siteName: title,
+    images: [
+      {
+        url: `${siteUrl}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "Ram Poptani — Full Stack Java Developer Portfolio",
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
+    images: [`${siteUrl}/opengraph-image`],
   },
   robots: {
     index: true,
