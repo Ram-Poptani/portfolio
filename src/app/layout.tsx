@@ -2,31 +2,48 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const siteUrl = "https://ram-poptani.vercel.app";
-const title = "Ram Poptani | Software Developer";
+const title = "Ram Poptani — Full Stack Java Developer | Portfolio";
 const description =
-  "Full Stack Java Developer with 2.5+ years of experience building scalable microservices and REST APIs using Java and Spring Boot.";
+  "Ram Poptani is a Full Stack Java Developer with 2.5+ years of experience at Ernst & Young (EY), building scalable microservices, REST APIs, and event-driven systems using Java, Spring Boot, Apache Kafka, React.js, and Azure. Based in Mumbai, India.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title,
+  title: {
+    default: title,
+    template: "%s | Ram Poptani",
+  },
   description,
   keywords: [
-    "Java Developer",
-    "Spring Boot",
-    "Full Stack",
-    "React",
-    "Portfolio",
     "Ram Poptani",
+    "Ram Poptani developer",
+    "Ram Poptani portfolio",
+    "Ram Poptani software engineer",
+    "Full Stack Java Developer",
+    "Java Developer Mumbai",
+    "Spring Boot Developer",
+    "Backend Engineer India",
+    "React Developer",
+    "Ernst Young Developer",
+    "EY Developer",
+    "Software Developer Portfolio",
+    "Microservices Developer",
+    "REST API Developer",
+    "Apache Kafka",
+    "Node.js Developer",
   ],
-  authors: [{ name: "Ram Poptani" }],
+  authors: [{ name: "Ram Poptani", url: siteUrl }],
   creator: "Ram Poptani",
+  publisher: "Ram Poptani",
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: siteUrl,
-    title,
+    title: "Ram Poptani — Full Stack Java Developer",
     description,
-    siteName: title,
+    siteName: "Ram Poptani | Portfolio",
     images: [
       {
         url: `${siteUrl}/opengraph-image`,
@@ -39,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title,
+    title: "Ram Poptani — Full Stack Java Developer",
     description,
     images: [`${siteUrl}/opengraph-image`],
   },
@@ -54,6 +71,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    // Add your Google Search Console verification code here
+    // google: "your-google-verification-code",
+  },
 };
 
 export default function RootLayout({
@@ -64,6 +85,82 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="canonical" href={siteUrl} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Person",
+                  "@id": `${siteUrl}/#person`,
+                  name: "Ram Poptani",
+                  url: siteUrl,
+                  jobTitle: "Full Stack Java Developer",
+                  description:
+                    "Full Stack Java Developer with 2.5+ years of experience building scalable microservices and REST APIs using Java and Spring Boot at Ernst & Young (EY).",
+                  email: "ram.poptani.work@gmail.com",
+                  telephone: "+919518317113",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Mumbai",
+                    addressCountry: "IN",
+                  },
+                  alumniOf: [
+                    {
+                      "@type": "CollegeOrUniversity",
+                      name: "Vivekanand Education Society's Institute of Technology",
+                    },
+                  ],
+                  worksFor: {
+                    "@type": "Organization",
+                    name: "Ernst & Young LLP",
+                    url: "https://www.ey.com",
+                  },
+                  knowsAbout: [
+                    "Java",
+                    "Spring Boot",
+                    "Microservices",
+                    "REST APIs",
+                    "Apache Kafka",
+                    "React.js",
+                    "Node.js",
+                    "TypeScript",
+                    "Docker",
+                    "Azure",
+                    "PostgreSQL",
+                    "Redis",
+                  ],
+                  sameAs: [
+                    "https://www.linkedin.com/in/ram-poptani-302/",
+                    "https://github.com/Ram-Poptani",
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${siteUrl}/#website`,
+                  url: siteUrl,
+                  name: "Ram Poptani — Portfolio",
+                  description:
+                    "Portfolio of Ram Poptani, a Full Stack Java Developer at Ernst & Young (EY), Mumbai.",
+                  publisher: { "@id": `${siteUrl}/#person` },
+                },
+                {
+                  "@type": "WebPage",
+                  "@id": `${siteUrl}/#webpage`,
+                  url: siteUrl,
+                  name: "Ram Poptani — Full Stack Java Developer | Portfolio",
+                  description:
+                    "Ram Poptani is a Full Stack Java Developer with 2.5+ years of experience building scalable microservices and REST APIs.",
+                  isPartOf: { "@id": `${siteUrl}/#website` },
+                  about: { "@id": `${siteUrl}/#person` },
+                },
+              ],
+            }),
+          }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -1,0 +1,16 @@
+{
+  "name": "Ram Poptani — Full Stack Java Developer Portfolio",
+  "short_name": "Ram Poptani",
+  "description": "Portfolio of Ram Poptani, a Full Stack Java Developer with 2.5+ years of experience at Ernst & Young (EY), building scalable microservices and REST APIs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#110f0b",
+  "theme_color": "#d97706",
+  "icons": [
+    {
+      "src": "/opengraph-image",
+      "sizes": "1200x630",
+      "type": "image/png"
+    }
+  ]
+}
