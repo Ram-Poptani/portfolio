@@ -169,7 +169,7 @@ export default async function OGImage() {
             fontWeight: 500,
           }}
         >
-          rampoptani.dev
+          ram-poptani.vercel.app
         </div>
       </div>
     ),
